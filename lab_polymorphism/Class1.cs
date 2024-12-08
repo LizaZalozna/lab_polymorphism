@@ -80,3 +80,37 @@ class Square : Figure
         graphics.DrawPolygon(new Pen(form.BackColor), GetPointsForOurFigure());
     }
 }
+
+class Rhomb : Figure
+{
+    private int horDiagLen;
+    private int vertDiagLen;
+    public Rhomb(int xCenter, int yCenter, int horDiagLen, int vertDiagLen, Form form)
+    {
+        this.xCenter = xCenter;
+        this.yCenter = yCenter;
+        this.horDiagLen = horDiagLen;
+        this.vertDiagLen = vertDiagLen;
+        this.form = form;
+    }
+    private Point[] GetPointsForOurFigure()
+    {
+        return new Point[] {
+            new Point(xCenter - horDiagLen/2,  yCenter),
+            new Point(xCenter,  yCenter + vertDiagLen/2),
+            new Point(xCenter + horDiagLen/2,  yCenter),
+            new Point(xCenter,  yCenter - vertDiagLen/2)
+            };
+    }
+    public override void DrawBlack()
+    {
+        Graphics graphics = form.CreateGraphics();
+        graphics.DrawPolygon(Pens.Black, GetPointsForOurFigure());
+    }
+
+    public override void HideDrawingBackGround()
+    {
+        Graphics graphics = form.CreateGraphics();
+        graphics.DrawPolygon(new Pen(form.BackColor), GetPointsForOurFigure());
+    }
+}
