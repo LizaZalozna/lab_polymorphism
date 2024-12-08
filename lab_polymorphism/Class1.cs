@@ -9,7 +9,7 @@ abstract class Figure
 {
 	protected int xCenter;
 	protected int yCenter;
-    protected Form form;
+    protected Form1 form;
 
     public void MoveRight()
     {
@@ -29,7 +29,7 @@ abstract class Figure
 class Circle:Figure
 {
     private int radius;
-    public Circle(int xCenter, int yCenter, int radius, Form form)
+    public Circle(int xCenter, int yCenter, int radius, Form1 form)
     {
         this.xCenter = xCenter;
         this.yCenter = yCenter;
@@ -52,7 +52,7 @@ class Circle:Figure
 class Square : Figure
 {
     private int sideLength;
-    public Square(int xCenter, int yCenter, int sideLength, Form form)
+    public Square(int xCenter, int yCenter, int sideLength, Form1 form)
     {
         this.xCenter = xCenter;
         this.yCenter = yCenter;
@@ -85,7 +85,7 @@ class Rhomb : Figure
 {
     private int horDiagLen;
     private int vertDiagLen;
-    public Rhomb(int xCenter, int yCenter, int horDiagLen, int vertDiagLen, Form form)
+    public Rhomb(int xCenter, int yCenter, int horDiagLen, int vertDiagLen, Form1 form)
     {
         this.xCenter = xCenter;
         this.yCenter = yCenter;
